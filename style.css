@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+body {   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-image: url('img/Hero-bg.png');
     background-size: cover;
     background-position: center;
@@ -14,8 +13,9 @@ body {
     min-height: 100vh;
     color: white;
     overflow-x: hidden;
-    position: relative;
+    position: relative;   
 }
+ 
 
 body::before {
     content: '';
@@ -26,11 +26,6 @@ body::before {
     bottom: 0;
     background: rgba(0, 0, 0, 0.3);
     z-index: 1;
-}
-
-.container {
-    position: relative;
-    z-index: 2;
 }
 
 .container {
@@ -191,9 +186,160 @@ body::before {
     transform: scale(1.05);
 }
 
-/* Remove decorative elements styles */
+/* Stats Section */
+.stats-section {
+    background: rgba(230, 230, 255, 0.95);
+    color: #333;
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.stats-content {
+    text-align: center;
+}
+
+.stats-content h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 60px;
+    color: #333;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #4353ff;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 60px;
+    color: #333;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.testimonial h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.testimonial p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e5e7eb;
+}
+
+.reviewer div {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewer-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.reviewer-date {
+    font-size: 12px;
+    color: #999;
+}
 
 /* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.mobile-mockup {
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .action-content {
         grid-template-columns: 1fr;
@@ -220,28 +366,22 @@ body::before {
     .mobile-preview {
         max-width: 300px;
     }
-}
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
-}
 
-.hero h1 {
-    animation: fadeInUp 1s ease-out;
-}
+    .stats-content h2 {
+        font-size: 28px;
+    }
 
-.hero-subtitle {
-    animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-.mobile-mockup {
-    animation: fadeInUp 1s ease-out 0.4s both;
+    .testimonials-section h2 {
+        font-size: 28px;
+    }
 }
